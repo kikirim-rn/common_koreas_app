@@ -9,7 +9,7 @@ class KoreasRepository {
     if (cacheResults != null) {
       return cacheResults;
     }
-    final results = await service.searchItem(term);
+    final results = await service.searchItem();
     print("KoreasRepository Result Length => ${results.items.length}");
     cache.set(term, results);
     return results;

@@ -11,8 +11,8 @@ class KoreasService {
   KoreasService({HttpClient? client, this.baseUrl = "https://kikirim-rn.github.io/api/koreas.json"})
       : httpClient = client ?? HttpClient();
 
-  Future<SearchResult> searchItem(String param) async {
-    final response = await httpClient.get(Uri.parse('$baseUrl$param'));
+  Future<SearchResult> searchItem() async {
+    final response = await httpClient.get(Uri.parse(baseUrl));
     final results = jsonDecode(response.body);
     if (response.statusCode == 200) {
       print("KoreasService Results => ${results.items}");
