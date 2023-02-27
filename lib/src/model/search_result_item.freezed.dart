@@ -22,7 +22,6 @@ SearchResultItem _$SearchResultItemFromJson(Map<String, dynamic> json) {
 mixin _$SearchResultItem {
   @JsonKey(name: "koreasName")
   String get koreasName => throw _privateConstructorUsedError;
-  KoreasUser get series => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,10 +35,7 @@ abstract class $SearchResultItemCopyWith<$Res> {
           SearchResultItem value, $Res Function(SearchResultItem) then) =
       _$SearchResultItemCopyWithImpl<$Res, SearchResultItem>;
   @useResult
-  $Res call(
-      {@JsonKey(name: "koreasName") String koreasName, KoreasUser series});
-
-  $KoreasUserCopyWith<$Res> get series;
+  $Res call({@JsonKey(name: "koreasName") String koreasName});
 }
 
 /// @nodoc
@@ -56,26 +52,13 @@ class _$SearchResultItemCopyWithImpl<$Res, $Val extends SearchResultItem>
   @override
   $Res call({
     Object? koreasName = null,
-    Object? series = null,
   }) {
     return _then(_value.copyWith(
       koreasName: null == koreasName
           ? _value.koreasName
           : koreasName // ignore: cast_nullable_to_non_nullable
               as String,
-      series: null == series
-          ? _value.series
-          : series // ignore: cast_nullable_to_non_nullable
-              as KoreasUser,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $KoreasUserCopyWith<$Res> get series {
-    return $KoreasUserCopyWith<$Res>(_value.series, (value) {
-      return _then(_value.copyWith(series: value) as $Val);
-    });
   }
 }
 
@@ -87,11 +70,7 @@ abstract class _$$_SearchResultItemCopyWith<$Res>
       __$$_SearchResultItemCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: "koreasName") String koreasName, KoreasUser series});
-
-  @override
-  $KoreasUserCopyWith<$Res> get series;
+  $Res call({@JsonKey(name: "koreasName") String koreasName});
 }
 
 /// @nodoc
@@ -106,17 +85,12 @@ class __$$_SearchResultItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? koreasName = null,
-    Object? series = null,
   }) {
     return _then(_$_SearchResultItem(
       koreasName: null == koreasName
           ? _value.koreasName
           : koreasName // ignore: cast_nullable_to_non_nullable
               as String,
-      series: null == series
-          ? _value.series
-          : series // ignore: cast_nullable_to_non_nullable
-              as KoreasUser,
     ));
   }
 }
@@ -126,8 +100,7 @@ class __$$_SearchResultItemCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: false)
 class _$_SearchResultItem implements _SearchResultItem {
   const _$_SearchResultItem(
-      {@JsonKey(name: "koreasName") required this.koreasName,
-      required this.series});
+      {@JsonKey(name: "koreasName") required this.koreasName});
 
   factory _$_SearchResultItem.fromJson(Map<String, dynamic> json) =>
       _$$_SearchResultItemFromJson(json);
@@ -135,12 +108,10 @@ class _$_SearchResultItem implements _SearchResultItem {
   @override
   @JsonKey(name: "koreasName")
   final String koreasName;
-  @override
-  final KoreasUser series;
 
   @override
   String toString() {
-    return 'SearchResultItem(koreasName: $koreasName, series: $series)';
+    return 'SearchResultItem(koreasName: $koreasName)';
   }
 
   @override
@@ -149,13 +120,12 @@ class _$_SearchResultItem implements _SearchResultItem {
         (other.runtimeType == runtimeType &&
             other is _$_SearchResultItem &&
             (identical(other.koreasName, koreasName) ||
-                other.koreasName == koreasName) &&
-            (identical(other.series, series) || other.series == series));
+                other.koreasName == koreasName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, koreasName, series);
+  int get hashCode => Object.hash(runtimeType, koreasName);
 
   @JsonKey(ignore: true)
   @override
@@ -173,8 +143,8 @@ class _$_SearchResultItem implements _SearchResultItem {
 
 abstract class _SearchResultItem implements SearchResultItem {
   const factory _SearchResultItem(
-      {@JsonKey(name: "koreasName") required final String koreasName,
-      required final KoreasUser series}) = _$_SearchResultItem;
+          {@JsonKey(name: "koreasName") required final String koreasName}) =
+      _$_SearchResultItem;
 
   factory _SearchResultItem.fromJson(Map<String, dynamic> json) =
       _$_SearchResultItem.fromJson;
@@ -182,8 +152,6 @@ abstract class _SearchResultItem implements SearchResultItem {
   @override
   @JsonKey(name: "koreasName")
   String get koreasName;
-  @override
-  KoreasUser get series;
   @override
   @JsonKey(ignore: true)
   _$$_SearchResultItemCopyWith<_$_SearchResultItem> get copyWith =>

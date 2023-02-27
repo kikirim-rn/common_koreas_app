@@ -30,3 +30,4 @@ class KoreasUser with _$KoreasUser {
 
   factory KoreasUser.fromJson(KoreasUserMap json) => _$KoreasUserFromJson(json);
 }
+//17:44 items altında login ve
